@@ -77,7 +77,7 @@ getUserData(1)
 function getUserDataPromise(id) {
 
     if (typeof id !== 'number' || id < 1 || id > 10) {
-        return Promise.reject('Invalid input -- Out of range');
+        return Promise.reject('Invalid input -- Input must be a number betweem 1 and 10');
     }
 
     //db objects
