@@ -1,0 +1,84 @@
+A Promise is an object that represents the eventual completion or failure of an asynchronous operation.
+It's a way to handle asynchronous code more elegantly and avoid callback hell.
+
+
+States of a Promise:
+Pending: Initial state, neither fulfilled nor rejected.
+Fulfilled: The operation completed successfully.
+Rejected: The operation failed.
+
+
+Basic structure:
+let promise = new Promise((resolve, reject) => {
+
+  // Asynchronous operation here
+
+  if (/* operation successful */) {    
+    resolve(value); // Fulfills the promise
+  } else {
+    reject(error); // Rejects the promise
+  }
+});
+
+Using a Promise:
+promise
+  .then((result) => {
+    // Handle success
+  })
+  .catch((error) => {
+    // Handle error
+  });
+
+  
+resolve(value) fulfills the promise with value. This value is passed to the next .then().
+
+reject(reason) rejects the promise with reason. This reason is passed to the next .catch().
+
+If a promise is fulfilled, .then() handlers are called.
+If a promise is rejected, .catch() handlers are called.
+
+This mechanism allows you to handle both successful operations and errors in a clean, chainable way. 
+The resolve value flows through .then() methods, while the reject reason flows to .catch() methods.
+
+
+Await and Async Functions
+---------------------------------
+The await keyword is used inside async functions to pause execution until a Promise is settled (either fulfilled or rejected). It makes asynchronous code look and behave more like synchronous code, which can be easier to read and understand.
+Here's why and how we use await with database queries:
+
+Why use await with DB queries:
+Database operations are typically asynchronous and return Promises.
+await allows you to write asynchronous code in a more synchronous style.
+It helps avoid callback hell and makes error handling more straightforward.
+
+Benefits of using await:
+Code reads more like synchronous code, improving readability.
+Error handling with try/catch blocks is more intuitive.
+You can chain multiple asynchronous operations easily.
+
+Example usage:
+async function getUserData(id) {
+  try {
+
+    
+  } catch (error) {
+    
+
+    return Promise.reject(error);
+  }
+}
+
+dbs[dbName]    // This part retrieves the function
+dbs[dbName]()  // This calls (executes) the function
+
+const databaseFunction = dbs[dbName];  // Get the function
+const result = databaseFunction();     // Call the function
+
+error.message
+Error Object: When an error occurs (for example, if a Promise is rejected), JavaScript creates an Error object, which has several properties:
+
+name: The name of the error (e.g., "TypeError", "ReferenceError").
+message: A string that describes the error in a human-readable format.
+stack: A string representing the point in the code at which the Error was instantiated (useful for debugging).
+
+
