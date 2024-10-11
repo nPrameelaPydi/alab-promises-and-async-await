@@ -68,11 +68,23 @@ async function getUserData(id) {
   }
 }
 
+
+Accessing object properties:
+When we use dbs[dbName], we are indeed just accessing the property (which happens to be a function in this case). This part does not execute the function; it just retrieves it.
+Executing the function:
+The parentheses () after dbs[dbName] are what actually call (execute) the function.
+
+
+********************************************************
 dbs[dbName]    // This part retrieves the function
 dbs[dbName]()  // This calls (executes) the function
 
 const databaseFunction = dbs[dbName];  // Get the function
 const result = databaseFunction();     // Call the function
+
+const result = dbs["db1"]();  // Get the "db1" function and immediately call it
+*********************************************************************
+
 
 error.message
 Error Object: When an error occurs (for example, if a Promise is rejected), JavaScript creates an Error object, which has several properties:
