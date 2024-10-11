@@ -69,6 +69,9 @@ getUserData(1)
     .then(resolveData => console.log(resolveData))
     .catch(error => console.error(error));
 
+
+
+
 //////////////////Part 2: The Implementation///////////
 
 function getUserDataPromise(id) {
@@ -118,16 +121,13 @@ function getUserDataPromise(id) {
 
 }
 
-//.then(console.log)  // Logs the resolved value directly
-//.catch(console.error); // Logs errors clearly
-//getUserDataPromise(1).then(console.log).catch(console.error);
-//getUserDataPromise(5).then(console.log).catch(console.error);
-//getUserDataPromise(10).then(console.log).catch(console.error);
-
 getUserDataPromise(9)
     .then(function (resolveVal) { console.log(resolveVal) })
     .catch(function (rejectVal) { console.error(rejectVal) });
 
+
+//.then(console.log)  // Logs the resolved value directly
+//.catch(console.error); // Logs errors clearly
 
 // Invalid IDs
 //getUserData(0).then(console.log).catch(console.error);
@@ -136,6 +136,7 @@ getUserDataPromise(11).then(console.log).catch(console.error);
 // Invalid data types
 getUserDataPromise("abc").then(console.log).catch(console.error);
 getUserDataPromise(true).then(console.log).catch(console.error);
+
 
 
 
